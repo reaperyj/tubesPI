@@ -1,0 +1,343 @@
+* {
+	box-sizing: border-box;
+}
+#logo,
+#logo2,
+#nav-head,
+#main-sidebar,
+#header,
+#dashboard,
+#labels {
+	background-color: white;
+}
+
+#sidebar-burger,
+.name,
+#dashboard,
+#labels,
+#header,
+#main_sidebar,
+#forms,
+#edit_forms,
+#tables,
+#profile,
+#users,
+#id_name,
+#barangmasuk,
+#satuanbarang {
+	color: grey;
+}
+
+#dashboard,
+#labels,
+#header,
+#main_sidebar,
+#forms,
+#edit_forms,
+#tables,
+#profile,
+#online_name,
+#id_name,
+#users {
+	font-size: 1.8rem;
+}
+
+#a_forms:hover,
+#a_tables:hover,
+#a_profile:hover,
+#a_users:hover,
+#sidebar-burger:hover {
+	background-color: #8a8e92;
+	color: white;
+}
+
+#main_sidebar:hover,
+#forms:hover,
+#edit_forms:hover,
+#tables:hover,
+#profile:hover,
+#users:hover {
+	color: white;
+}
+
+#online {
+	color: rgb(142, 223, 142);
+	font-size: 1.5rem;
+}
+
+#logo {
+	background: linear-gradient(#a3b3c7, #663399);
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	font-family: "Poppins", sans-serif;
+	font-size: 2.4rem;
+}
+
+#main_sidebar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding-top: 50px;
+	min-height: 100%;
+	width: 500rem;
+	z-index: 810;
+}
+
+#icon_dashboard,
+#icon_forms,
+#icon_tables,
+#icon_profile,
+#icon_users {
+	float: right;
+}
+
+#edit_forms {
+	background-color: white;
+}
+
+#icon_dashboard {
+	margin-right: 2rem;
+}
+#icon_forms {
+	margin-right: 1.5rem;
+}
+#icon_tables {
+	margin-right: 1.7rem;
+}
+#icon_profile {
+	margin-right: 1.7rem;
+}
+#icon_users {
+	margin-right: 1.6rem;
+}
+
+#content_box1,
+#content_box2,
+#content_box3,
+#content_box4 {
+	border-radius: 1.7rem;
+	padding: 2.5rem 2.5rem;
+	min-height: 30vh;
+}
+
+#content_box1 p,
+#content_box2 p,
+#content_box3 p,
+#content_box4 p {
+	padding-top: 1rem;
+	font-size: 2rem;
+	font-family: "Mitr", sans-serif;
+	font-weight: initial;
+	line-height: normal;
+}
+
+#developer {
+	font-family: "Mitr", sans-serif;
+	font-weight: initial;
+	color: rgb(95, 95, 95);
+}
+
+#box_footer1,
+#box_footer2,
+#box_footer3,
+#box_footer4 {
+	margin-top: 6rem;
+	font-size: 1.7rem;
+	font-family: "Mitr", sans-serif;
+	font-weight: initial;
+	line-height: normal;
+}
+
+#content_box1 {
+	background-image: linear-gradient(
+		to right top,
+		#07a3b2,
+		#54b7b1,
+		#84cab2,
+		#b0dbb9,
+		#d9ecc7
+	);
+}
+
+#content_box2 {
+	background: linear-gradient(
+		to right top,
+		#2b463c,
+		#416852,
+		#5f8a64,
+		#84ae74,
+		#b1d182
+	);
+}
+
+#content_box3 {
+	background-image: linear-gradient(
+		to left bottom,
+		#eeb462,
+		#eca862,
+		#e89c62,
+		#e39163,
+		#dc8665
+	);
+}
+
+#content_box4 {
+	background-image: linear-gradient(
+		to left bottom,
+		#e65758,
+		#ca4750,
+		#ae3846,
+		#922a3d,
+		#771d32
+	);
+}
+
+#active {
+	color: white;
+	background-color: #b3b3b3;
+}
+
+#tabelmsk,
+#tabelkeluar,
+#tabelsatuan,
+#barangmsk,
+#satuanbrg {
+	color: #b3b3b3;
+	background-color: white;
+}
+
+#users_active {
+	color: white;
+	background-color: #b3b3b3;
+}
+
+#tabelmsk:hover,
+#tabelkeluar:hover,
+#tabelsatuan:hover,
+#barangmsk:hover,
+#satuanbrg:hover {
+	background-color: #8a8e92;
+	color: white;
+}
+
+/* FORMS CSS */
+#box_forms {
+	border-radius: 1.5rem;
+}
+
+#id_transaksi,
+#tanggal,
+#lokasi,
+#kode_barang,
+#nama_barang,
+#kode_satuan,
+#nama_satuan {
+	border-radius: 1.4rem;
+	font-family: "Ubuntu", sans-serif;
+	border: 1px solid rgb(233, 233, 233);
+}
+
+#satuan,
+#jumlah {
+	border-radius: 1.4rem;
+	font-family: "Ubuntu", sans-serif;
+}
+
+#button1,
+#button2,
+#button3,
+#button4 {
+	border-style: none;
+}
+
+#button1,
+#button2 {
+	color: #212529;
+	background-color: #f8f9fa;
+	border-color: #f8f9fa;
+}
+
+#button1:hover,
+#button2:hover {
+	color: #212529;
+	background-color: #e2e6ea;
+	border-color: #dae0e5;
+}
+
+#button2 {
+	padding: 1.2rem 0rem;
+	font-size: medium;
+}
+
+#button3 {
+	background: -webkit-gradient(
+		linear,
+		left top,
+		right top,
+		from(#da8cff),
+		to(#9a55ff)
+	);
+	background: linear-gradient(to right, #da8cff, #9a55ff);
+	border: 0;
+	-webkit-transition: opacity 0.3s ease;
+	transition: opacity 0.3s ease;
+	color: white;
+	margin-right: 25%;
+	padding: 1.2rem 1rem;
+	font-weight: bold;
+	font-size: medium;
+}
+
+#button4 {
+	background: -webkit-gradient(
+		linear,
+		left top,
+		right top,
+		from(#84d9d2),
+		to(#07cdae)
+	);
+	background: linear-gradient(to right, #84d9d2, #07cdae);
+	border: 0;
+	-webkit-transition: opacity 0.3s ease;
+	transition: opacity 0.3s ease;
+	color: white;
+	padding: 1.2rem 1rem;
+	font-weight: bold;
+	font-size: medium;
+}
+
+#invoice_manual {
+	background: -webkit-gradient(
+		linear,
+		left top,
+		right top,
+		from(#ffbf96),
+		to(#fe7096)
+	);
+	background: linear-gradient(to right, #ffbf96, #fe7096);
+	border: 0;
+	-webkit-transition: opacity 0.3s ease;
+	transition: opacity 0.3s ease;
+	color: rgb(63, 63, 63);
+	padding: 1.2rem 1.5rem;
+	font-weight: bold;
+	font-size: medium;
+}
+
+#button5 {
+	background: -webkit-gradient(
+		linear,
+		left top,
+		right top,
+		from(#90caf9),
+		color-stop(99%, #047edf)
+	);
+	background: linear-gradient(to right, #90caf9, #047edf 99%);
+	border: 0;
+	-webkit-transition: opacity 0.3s ease;
+	transition: opacity 0.3s ease;
+	color: white;
+	padding: 1.2rem 1.5rem;
+	font-weight: bold;
+	font-size: medium;
+}
