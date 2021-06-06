@@ -18,13 +18,14 @@ class Register extends CI_Controller {
   }
 
   public function proses_register(){
-
+    $this->form_validation->set_rules('nip','nip','required');
     $this->form_validation->set_rules('username','Username','required');
 		$this->form_validation->set_rules('email','Email','required');
     $this->form_validation->set_rules('password','Password','required');
     $this->form_validation->set_rules('confirm_password','Confirm Password','required|matches[password]');
 
     if($this->form_validation->run() == TRUE){
+      $nip = $this->input->post('nip',TRUE);
       $username = $this->input->post('username',TRUE);
 			$email    = $this->input->post('email',TRUE);
       $password = $this->input->post('password',TRUE);
@@ -33,8 +34,13 @@ class Register extends CI_Controller {
 				$this->session->set_flashdata('msg','Username Telah Digunakan');
 				redirect(base_url('login/register'));
 
+      }elseif  ($this->M_login->cek_nip('user',$nip)){
+				$this->session->set_flashdata('msg','NIP Telah Digunakan');
+				redirect(base_url('login/register'));
+
       }else{
         $data = array(
+              'nip' => $nip,
               'username' => $username,
 							'email' 	 => $email,
               'password' => $this->hash_password($password)
