@@ -51,14 +51,14 @@
     <nav class="navbar navbar-inverse navbar-fixed-top bg-dark">
       <div class="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="<?= base_url('user')?>">Web Gudang</a>
+          <a class="navbar-brand" href="<?= base_url('user')?>">Home</a>
         </div>
           <ul class="nav navbar-nav mr-auto">
             <!-- <li><a class="nav-link" href="#">Home</a></li> -->
-            <li class="dropdown"><a class="bg-dark dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-database" aria-hidden="true"></i> Tabel <span class="caret"></span></a>
+            <li class="dropdown"><a class="bg-dark dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-database" aria-hidden="true"></i> FITUR <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="<?=base_url('user/tabel_barangmasuk');?>">Tabel Barang Masuk</a></li>
-                <li><a href="<?=base_url('user/tabel_barangkeluar');?>">Tabel Barang Keluar</a></li>
+                <li><a href="<?=base_url('user/tabel_barangmasuk');?>">Form Permintaan Barang</a></li>
+                <li><a href="<?=base_url('user/tabel_barangkeluar');?>">Form Persetujuan Admin</a></li>
                   <!-- <li><a href="#">Tabel Gudang 3</a></li> -->
               </ul>
             </li>
