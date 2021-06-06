@@ -206,6 +206,8 @@ footer a, footer a:link {
    </div>
   <?php } ?>
 
+    <input type="number" name="nip" placeholder="nip"  autofocus required="" />
+
     <input type="text" name="username" placeholder="Username" autofocus required=""/>
 
     <i class="fa fa-user"></i>

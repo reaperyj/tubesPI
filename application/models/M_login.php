@@ -13,6 +13,13 @@ class M_login extends CI_Model{
              ->get()->result();
   }
 
+  public function cek_nip($tabel,$nip){
+    return $this->db->select('nip')
+             ->from($tabel)
+             ->where('nip',$nip)
+             ->get()->result();
+  }
+
   public function cek_user($tabel,$username){
     return  $this->db->select('*')
                ->from($tabel)
