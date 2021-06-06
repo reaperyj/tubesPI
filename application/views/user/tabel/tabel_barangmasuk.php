@@ -78,39 +78,23 @@
                   <input type="text" id="tanggal" name="tanggal" style="margin-left:66px;width:20%;display:inline;" class="form-control form_datetime" placeholder="Klik Disini">
                 </div>
                 <div class="form-group" style="margin-bottom:40px;">
-                  <label for="nama_barang" style="margin-left:220px;display:inline;font-family: 'Ubuntu', sans-serif;color:rgb(63, 63, 63);">Lokasi</label>
+                  <label for="nama_barang" style="margin-left:220px;display:inline;font-family: 'Ubuntu', sans-serif;color:rgb(63, 63, 63);">Falkutas</label>
                   <select class="form-control" id="lokasi" name="lokasi" style="margin-left:75px;width:20%;display:inline;">
                     <option value="">-- Pilih --</option>
-                    <option value="Aceh">Aceh</option>
-                    <option value="Bali">Bali</option>
-                    <option value="Bengkulu">Bengkulu</option>
-                    <option value="Jakarta">Jakarta Raya</option>
-                    <option value="Jambi">Jambi</option>
-                    <option value="Jawa Tengah">Jawa Tengah</option>
-                    <option value="Jawa Timur">Jawa Timur</option>
-                    <option value="Jawa Barat">Jawa Barat</option>
-                    <option value="Papua">Papua</option>
-                    <option value="Yogyakarta">Yogyakarta</option>
-                    <option value="Kalimantan Barat">Kalimantan Barat</option>
-                    <option value="Kalimantan Selatan">Kalimantan Selatan</option>
-                    <option value="Kalimantan Tengah">Kalimantan Tengah</option>
-                    <option value="Kalimantan Timur">Kalimantan Timur</option>
-                    <option value="Lampung">Lampung</option>
-                    <option value="NTB">Nusa Tenggara Barat</option>
-                    <option value="NTT">Nusa Tenggara Timur</option>
-                    <option value="Riau">Riau</option>
-                    <option value="Sulawesi Selatan">Sulawesi Selatan</option>
-                    <option value="Sulawesi Tengah">Sulawesi Tengah</option>
-                    <option value="Sulawesi Tenggara">Sulawesi Tenggara</option>
-                    <option value="Sumatera Barat">Sumatera Barat</option>
-                    <option value="Sumatera Utara">Sumatera Utara</option>
-                    <option value="Maluku">Maluku</option>
-                    <option value="Maluku Utara">Maluku Utara</option>
-                    <option value="Sulawesi Utara">Sulawesi Utara</option>
-                    <option value="Sulawesi Selatan">Sumatera Selatan</option>
-                    <option value="Banten">Banten</option>
-                    <option value="Gorontalo">Gorontalo</option>
-                    <option value="Bangka">Bangka Belitung</option>
+                    <option value="Kedokteran">Kedokter</option>
+                    <option value="Pertanian">Pertanian</option>
+                    <option value="Hukum">Hukum</option>
+                    <option value="Teknik">Teknik</option>
+                    <option value="Ekonomi">Ekonomi</option>
+                    <option value="Kedokteran Gigi">Kedokteran Gigi</option>
+                    <option value="Ilmu Budaya">Ilmu Budaya</option>
+                    <option value="Matematika dan IPA">Matematika dan IPA</option>
+                    <option value="Ilmu sosial dan Politik">Ilmu sosial dan Politik</option>
+                    <option value="Kesehatan Masyarakat">Kesehatan Masyarakat</option>
+                    <option value="Farmasi">Farmasi</option>
+                    <option value="Psikologi">Psikologi</option>
+                    <option value="Keperawatan">Keperawatan</option>
+                    <option value="Ilmu Komputer dan Teknologi Informasi">Ilmu Komputer dan Teknologi Informasi</option>
                   </select>
                 </div>
                 <div class="form-group" style="display:inline-block;">
