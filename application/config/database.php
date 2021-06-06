@@ -75,7 +75,7 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'mysql:hostname=localhost; dbname=invetory_db; charset=utf8;',
+	'hostname' => 'mysql:hostname=localhost; dbname=inventory_db; charset=utf8;',
 	'username' => 'root',
 	'password' => '',
 	'database' => '',
