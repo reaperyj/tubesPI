@@ -25,6 +25,17 @@ class M_user extends CI_Model{
                       ->get();
     return $query->result();
   }
+
+  public function get_data($tabel,$id_transaksi)
+  {
+    $query = $this->db->select()
+                      ->from($tabel)
+                      ->where($id_transaksi)
+                      ->get();
+    return $query->result();
+  }
+
+  
 }
 
  ?>

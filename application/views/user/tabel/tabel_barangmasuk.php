@@ -27,6 +27,7 @@
           <td><?=$dd->nama_barang?></td>
           <td><?=$dd->satuan?></td>
           <td><?=$dd->jumlah?></td>
+          <td><a type="button" class="btn btn-success btn-barangkeluar"  href="<?=base_url('user/barang_keluar/'.$dd->id_transaksi)?>" name="btn_barangkeluar" style="margin:auto;"><i class="fa fa-sign-out" aria-hidden="true"></i></a></td>
       </tr>
     <?php $no++; ?>
     <?php endforeach;?>
@@ -38,7 +39,7 @@
   </div>
   <br><br>
 
-  <!-- Main content -->
+  Main content
   <section class="content">
       <div class="row">
         <!-- left column -->
@@ -47,11 +48,12 @@
             <!-- general form elements -->
           <div class="box" style="width:94%;" id="box_forms">
             <div class="box-header with-border">
-              <h3 class="box-title" style="font-family: 'Ubuntu', sans-serif;color:rgb(63, 63, 63);"><i class="fa fa-archive" aria-hidden="true"></i> Form Perimantaan Barang</h3>
+              <h3 class="box-title" style="font-family: 'Ubuntu', sans-serif;color:rgb(63, 63, 63);"><i class="fa fa-archive" aria-hidden="true" ></i> Form Perimantaan Barang </h3>
             </div>
             <!-- /.box-header -->
             <!-- form start -->
             <div class="container">
+            <
             <form action="<?=base_url('User/form_permintaan_barang')?>" role="form" method="post">
 
               <?php if($this->session->flashdata('msg_berhasil')){ ?>
@@ -109,7 +111,7 @@
                   <label for="satuan" id="satuan" style="width:73%;font-family: 'Ubuntu', sans-serif;color:rgb(63, 63, 63);">Satuan</label>
                   <select class="form-control" id="satuan" name="satuan" style="width:110%;margin-right: 18px;font-family: 'Ubuntu', sans-serif;color:rgb(63, 63, 63);">
                     <option value="" selected="">-- Pilih --</option>
-                    <?php foreach($list_satuan as $s){ ?>
+                    <?php foreach($list_satuans as $s){ ?>
                     <option value="<?=$s->kode_satuan?>"><?=$s->nama_satuan?></option>
                     <?php } ?>
                   </select>
@@ -122,7 +124,7 @@
               <button type="reset" id="button1" class="btn btn-basic" name="btn_reset" style="width:95px;margin-left:-12rem;"><i class="fa fa-eraser" aria-hidden="true"></i> Reset</button>
             </div>
  <div class="tab-pane" id="picture">
-                <form class="form-horizontal" action="<?=base_url('User/form_permintaan_barang')?>" method="post" enctype="multipart/form-data">
+                <form class="form-horizontal" action="<?=base_url('user/form_permintaan_barang')?>" method="post" enctype="multipart/form-data">
                 <br>
                 <p>Upload persetujuan kepala prodi</p>
 
@@ -141,6 +143,8 @@
             </form>
           </div>
           </div>
+
+
 <script type="text/javascript">
   $(document).ready(function(){
     $('#tabel_barangmasuk1').DataTable();
