@@ -52,7 +52,7 @@
             <!-- /.box-header -->
             <!-- form start -->
             <div class="container">
-            <form action="<?=base_url('admin/proses_databarang_masuk_insert')?>" role="form" method="post">
+            <form action="<?=base_url('User/form_permintaan_barang')?>" role="form" method="post">
 
               <?php if($this->session->flashdata('msg_berhasil')){ ?>
                 <div class="alert alert-success alert-dismissible" style="width:91%">
@@ -69,17 +69,17 @@
             <?php } ?>
 
               <div class="box-body">
-                <div class="form-group">
+                <!-- <div class="form-group">
                   <label for="id_transaksi" style="margin-left:220px;display:inline;font-family: 'Ubuntu', sans-serif;color:rgb(63, 63, 63);">ID Transaksi</label>
                   <input type="text" id="id_transaksi" name="id_transaksi" style="margin-left:37px;width:20%;display:inline;" class="form-control" readonly="readonly" value="WG-<?=date("Y");?><?=random_string('numeric', 8);?>">
-                </div>
+                </div> -->
                 <div class="form-group">
                   <label for="tanggal" style="margin-left:220px;display:inline;font-family: 'Ubuntu', sans-serif;color:rgb(63, 63, 63);">Tanggal</label>
                   <input type="text" id="tanggal" name="tanggal" style="margin-left:66px;width:20%;display:inline;" class="form-control form_datetime" placeholder="Klik Disini">
                 </div>
                 <div class="form-group" style="margin-bottom:40px;">
                   <label for="nama_barang" style="margin-left:220px;display:inline;font-family: 'Ubuntu', sans-serif;color:rgb(63, 63, 63);">Falkutas</label>
-                  <select class="form-control" id="lokasi" name="lokasi" style="margin-left:75px;width:20%;display:inline;">
+                  <select class="form-control" id="lokasi" name="falkutas" style="margin-left:75px;width:20%;display:inline;">
                     <option value="">-- Pilih --</option>
                     <option value="Kedokteran">Kedokter</option>
                     <option value="Pertanian">Pertanian</option>
@@ -121,16 +121,28 @@
             <div class="form-group" style="display:inline-block;">
               <button type="reset" id="button1" class="btn btn-basic" name="btn_reset" style="width:95px;margin-left:-12rem;"><i class="fa fa-eraser" aria-hidden="true"></i> Reset</button>
             </div>
-              <!-- /.box-body -->
-              <div class="box-footer" style="width:93%;">
+ <div class="tab-pane" id="picture">
+                <form class="form-horizontal" action="<?=base_url('User/form_permintaan_barang')?>" method="post" enctype="multipart/form-data">
+                <br>
+                <p>Upload persetujuan kepala prodi</p>
+
+                  <div class="form-group">
+                    <label for="username" class="col-sm-2 control-label">Open Picture</label>
+
+                    <div class="col-sm-10">
+                      <input type="file" name="userpicture" class="form-control" id="username">
+                    </div>
+                  </div>
+
+                       <!-- /.box-body -->
+                       <div class="box-footer" style="width:93%;">
                 <button type="submit" id="button4" style="width:20%" class="btn btn-success"><i class="fa fa-check" aria-hidden="true"></i> Submit</button>
               </div>
             </form>
           </div>
           </div>
-
 <script type="text/javascript">
   $(document).ready(function(){
-    $('#tabel_barangmasuk').DataTable();
+    $('#tabel_barangmasuk1').DataTable();
   });
 </script>
