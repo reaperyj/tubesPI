@@ -168,12 +168,14 @@ class User extends CI_Controller
 
   public function barang_keluar()
   {
+    $this->load->view('user/templates/header.php');
     $uri = $this->uri->segment(3);
     $where = array( 'id_transaksi' => $uri);
     $data['list_data'] = $this->M_user->get_data('tb_barang_masuk',$where);
     $data['list_satuan'] = $this->M_user->select('tb_satuan');
     $data['avatar'] = $this->M_user->get_data_gambar('tb_upload_gambar_user',$this->session->userdata('name'));
     $this->load->view('user/tabel/form_permintaan',$data);
+    $this->load->view('user/templates/footer.php');
   }
 
   

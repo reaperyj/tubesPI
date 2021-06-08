@@ -1,4 +1,5 @@
-<br><br><br>
+<br><br><br><br><br>
+<br>
     <div class="container text-center" style="margin: 2em auto;">
     <h2 class="tex-center">Tabel Permintaan Barang</h2>
     <table class="table table-bordered table-striped" style="margin: 2em auto;" id="tabel_barangmasuk">
@@ -16,9 +17,9 @@
     </thead>
     <tbody>
       <tr>
-        <?php if(is_array($list_data1)){ ?>
+        <?php if(is_array($list_data)){ ?>
         <?php $no = 1;?>
-        <?php foreach($list_data1 as $dd): ?>
+        <?php foreach($list_data as $dd): ?>
           <td><?=$no?></td>
           <td><?=$dd->id_transaksi?></td>
           <td><?=$dd->tanggal?></td>
@@ -37,4 +38,12 @@
   </table>
   </div>
   <br><br>
+
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $('#tabel_barangmasuk').DataTable();
+  });
+</script>
+
+
 
