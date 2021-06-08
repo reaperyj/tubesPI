@@ -1,0 +1,74 @@
+#navbar {
+	background-color: white;
+	border-style: none;
+	font-family: "Montserrat", sans-serif;
+	font-size: 1.5rem;
+	font-weight: 600;
+}
+#container {
+	width: 85%;
+	margin: auto;
+}
+
+#dropdown:hover,
+#dropdown:focus,
+#home:hover,
+#setting:hover,
+#sign_out:hover {
+	background-color: #fcf2dd;
+	color: #613c23;
+}
+.nav-link {
+	color: rgba(255, 255, 255, 0.5);
+}
+.display-3 {
+	font-size: 4.5rem;
+	font-weight: 300;
+	line-height: 1.1;
+}
+.lead {
+	font-size: 1.25rem;
+	font-weight: 300;
+}
+.text-center {
+	text-align: center !important;
+}
+.jumbotron {
+	margin-bottom: 2rem;
+	background-color: #e9ecef;
+	border-radius: 0.3rem;
+}
+
+.navbar-brand {
+	color: #fff;
+}
+
+a {
+	color: #613c23 !important;
+}
+
+/* BODY */
+.hero {
+	min-height: 100vh;
+	width: 92%;
+	margin: 0 0 0 auto;
+	display: flex;
+}
+
+.hero-introduction {
+	flex: 2 1 55rem;
+}
+
+.hero-introduction p {
+	padding: 1rem 7rem 0.5rem 0rem;
+}
+
+.hero-introduction h2 {
+	padding-top: 15rem;
+}
+
+.hero-image {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}

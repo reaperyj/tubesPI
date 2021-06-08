@@ -1,14 +1,20 @@
-<br><br><br>
-    <div class="container text-center" style="margin: 2em auto;">
-      <div class="jumbotron">
-        <h1 class="display-3">Welcome ,
-                  <?=$this->session->userdata('name')?>
-                  
-       </h1>
+<section class="hero" id="about">
+        <div class="hero-introduction flex">
+          <h2>
+           Welcome, <br />
+           <strong><?=$this->session->userdata('name')?></strong>
+          </h2>
+          <p>Di Aplikasi Gudang Universitas Sumatera Utara <br></p>
+    <small>Last Login : <?=$this->session->userdata('last_login')?></small>
+         
+        </div>
+        <div class="hero-images">
+          <img
+            class="hero-image"
+            src="./style/home2.png"
+            alt="picture of logistic"
+          />
+        </div>
+</section>
 
-        <p class="lead">Di Aplikasi Gudang Universitas Sumatera Utara <br>
-        <small>Last Login : <?=$this->session->userdata('last_login')?></small>
-        
-        </p>
-    </div>
-  </div>
+      

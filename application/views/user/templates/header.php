@@ -13,49 +13,39 @@
     <script src="<?php echo base_url()?>assets/web_admin/bower_components/jquery/dist/jquery.min.js"></script>
     <script src="<?php echo base_url()?>assets/web_admin/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="<?php echo base_url()?>assets/web_admin/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <link rel="stylesheet" href="<?php echo base_url()?>assets/web_admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <link rel="stylesheet" href="<?php echo base_url()?>style/mdi/css/materialdesignicons.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
 
-    <style>
-      .bg-dark{
-        background-color: #343a40!important;
-      }
-      .nav-link{
-        color: rgba(255,255,255,.5);
-      }
-      .display-3 {
-        font-size: 4.5rem;
-        font-weight: 300;
-        line-height: 1.1;
-      }
-      .lead {
-        font-size: 1.25rem;
-        font-weight: 300;
-      }
-      .text-center {
-        text-align: center!important;
-      }
-      .jumbotron{
-        margin-bottom: 2rem;
-        background-color: #e9ecef;
-        border-radius: .3rem;
-      }
-      .mr-auto{
-        margin-right: auto!important;
-      }
-      .navbar-brand{
-        color: #fff;
-      }
-    </style>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Mitr&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="<?php echo base_url()?>style/user.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+
   </head>
   <body>
     <!-- navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top bg-dark">
-      <div class="container">
+    <nav class="navbar navbar-inverse navbar-fixed-top bg-dark" id="navbar">
+      <div class="container" id="container">
         <div class="navbar-header">
-          <a class="navbar-brand" href="<?= base_url('user')?>">Home</a>
+          <a class="navbar-brand" href="<?= base_url('user')?>" id="home">Home</a>
         </div>
           <ul class="nav navbar-nav mr-auto">
             <!-- <li><a class="nav-link" href="#">Home</a></li> -->
-            <li class="dropdown"><a class="bg-dark dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-database" aria-hidden="true"></i> FITUR <span class="caret"></span></a>
+            <li class="dropdown"><a class="dropdown-toggle" id="dropdown" data-toggle="dropdown" href="#"><i class="fa fa-database" aria-hidden="true"></i> Fitur <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="<?=base_url('user/tabel_barangmasuk');?>">Form Permintaan Barang</a></li>
                 <li><a href="<?=base_url('user/tabel_barangkeluar');?>">Form Persetujuan Admin</a></li>
@@ -67,8 +57,8 @@
           </ul>
           <ul class="nav navbar-nav navbar-right">
             <li><a class="nav-link">Last Login : <?=$this->session->userdata('last_login')?></a></li>            
-            <li><a class="nav-link" href="<?= base_url('user/setting') ?>"><i class="fa fa-user" aria-hidden="true"></i> Setting</a></li>
-            <li><a class="nav-link" href="<?= base_url('user/signout')?>"><i class="fa fa-sign-out" aria-hidden="true"></i> Sign Out</a></li>
+            <li><a class="nav-link" href="<?= base_url('user/setting') ?>" id="setting"><i class="fa fa-user" aria-hidden="true"></i> Setting</a></li>
+            <li><a class="nav-link" href="<?= base_url('user/signout')?>" id="sign_out"><i class="fa fa-sign-out" aria-hidden="true"></i> Sign Out</a></li>
           </ul>
       </div>
     </nav>
