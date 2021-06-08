@@ -11,8 +11,8 @@
         <div class="hero-images">
           <img
             class="hero-image"
-            src="./style/home3.png"
-            alt="picture of logistic"
+            src="./style/home4.png"
+            alt="picture of logistic "
           />
         </div>
 </section>
