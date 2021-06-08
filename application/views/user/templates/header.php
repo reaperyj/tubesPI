@@ -38,14 +38,14 @@
   </head>
   <body>
     <!-- navbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top bg-dark" id="navbar">
+    <nav class="navbar navbar-inverse navbar-fixed-top" id="navbar">
       <div class="container" id="container">
         <div class="navbar-header">
           <a class="navbar-brand" href="<?= base_url('user')?>" id="home">Home</a>
         </div>
           <ul class="nav navbar-nav mr-auto">
             <!-- <li><a class="nav-link" href="#">Home</a></li> -->
-            <li class="dropdown"><a class="dropdown-toggle" id="dropdown" data-toggle="dropdown" href="#"><i class="fa fa-database" aria-hidden="true"></i> Fitur <span class="caret"></span></a>
+            <li class="dropdown"><a class="dropdown" id="dropdown" data-toggle="dropdown" href="#"><i class="fa fa-database" aria-hidden="true"></i> Fitur <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li><a href="<?=base_url('user/tabel_barangmasuk');?>">Form Permintaan Barang</a></li>
                 <li><a href="<?=base_url('user/tabel_barangkeluar');?>">Form Persetujuan Admin</a></li>

@@ -15,12 +15,12 @@
 #home:hover,
 #setting:hover,
 #sign_out:hover {
-	background-color: #fcf2dd;
-	color: #613c23;
+	background-color: #c1dfc4;
+	color: white;
 }
 
 a {
-	color: #613c23 !important;
+	color: rgb(58, 58, 58) !important;
 }
 
 /* BODY */
@@ -29,6 +29,7 @@ a {
 	width: 92%;
 	margin: 0 0 0 auto;
 	display: flex;
+	color: rgb(58, 58, 58);
 }
 
 .hero-introduction {
