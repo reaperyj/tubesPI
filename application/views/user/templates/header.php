@@ -59,7 +59,7 @@
               <ul class="dropdown-menu">
                 <li><a href="<?=base_url('user/tabel_barangmasuk');?>">Form Permintaan Barang</a></li>
                 <li><a href="<?=base_url('user/tabel_barangkeluar');?>">Form Persetujuan Admin</a></li>
-                <li><a href="<?=base_url('user/tabel/tabel_permintaan');?>">Table Permintaan Barang</a></li>
+                <li><a href="<?=base_url('user/a');?>">Table Permintaan Barangg</a></li>
                   <!-- <li><a href="#">Tabel Gudang 3</a></li> -->
               </ul>
             </li>

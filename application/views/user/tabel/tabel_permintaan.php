@@ -39,11 +39,14 @@
   </div>
   <br><br>
 
+
   <script type="text/javascript">
   $(document).ready(function(){
-    $('#tabel_barangmasuk').DataTable();
+    $('#tabel_permintaan').DataTable();
   });
 </script>
+
+
 
 
 
