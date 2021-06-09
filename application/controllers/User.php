@@ -183,6 +183,7 @@ class User extends CI_Controller
   public function proses_data_keluar()
   {
     $this->form_validation->set_rules('tanggal_keluar','Tanggal Keluar','trim|required');
+    $this->session->set_flashdata('msg_berhasil_keluar','Data Berhasil Keluar');
     if($this->form_validation->run() === TRUE)
     {
       $id_transaksi   = $this->input->post('id_transaksi',TRUE);
@@ -205,9 +206,10 @@ class User extends CI_Controller
               'satuan' => $satuan,
               'jumlah' => $jumlah
       );
+
         $this->M_user->insert('tb_request',$data);
         $this->session->set_flashdata('msg_berhasil_keluar','Data Berhasil Keluar');
-        redirect(base_url('user/tabel/form_permintaan'));
+        redirect(base_url('user/tabel/tabel_barangmasuk'));
     }else {
       $this->load->view('user/tabel/form_permintaan'.$id_transaksi);
     }
