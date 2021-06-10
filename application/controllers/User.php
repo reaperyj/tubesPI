@@ -85,6 +85,14 @@ class User extends CI_Controller
     $this->load->view('user/tabel/tabel_barangmasuk',$data);
   }
 
+  public function tabel_form_permintaan()
+  {
+    $this->load->view('user/templates/header.php');
+    $data['list_data'] = $this->M_user->select('tb_request');
+    $this->load->view('user/tabel/tabel_permintaan',$data);
+    $this->load->view('user/templates/footer.php');
+  }
+
 
   public function form_permintaan_barang()
   {
@@ -143,16 +151,6 @@ class User extends CI_Controller
     $this->load->view('user/templates/footer.php');
   }
 
-  public function tabel_form_permintaan()
-  {
-    $this->load->view('user/templates/header.php');
-    $data['list_data'] = $this->M_user->select('tb_request');
-    $this->load->view('user/tabel/tabel_permintaan',$data);
-    $this->load->view('user/templates/footer.php');
-  }
-
-
-
   ####################################
         // DATA BARANG KELUAR
   ####################################
@@ -160,7 +158,7 @@ class User extends CI_Controller
   public function tabel_barangkeluar()
   {
     $this->load->view('user/templates/header.php');
-    $data['list_data'] = $this->M_user->select('tb_barang_keluar');
+    $data['list_data'] = $this->M_user->select('tb_request');
     $this->load->view('user/tabel/tabel_barangkeluar',$data);
     $this->load->view('user/templates/footer.php');
   }

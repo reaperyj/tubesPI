@@ -57,11 +57,9 @@
             <!-- <li><a class="nav-link" href="#">Home</a></li> -->
             <li class="dropdown"><a class="bg-dark dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-database" aria-hidden="true"></i> FITUR <span class="caret"></span></a>
               <ul class="dropdown-menu">
-                <li><a href="<?=base_url('user/tabel_barangmasuk');?>">Form Permintaan Barang</a></li>
-                <li><a href="<?=base_url('user/tabel_barangkeluar');?>">Form Persetujuan Admin</a></li>
-<<<<<<< HEAD
+                <li><a href="<?=base_url('user/tabel_barangmasuk');?>">TABEL STOCK BARANG</a></li>
+                <li><a href="<?=base_url('user/tabel_barangkeluar');?>">TABEL PERMINTAAN ADMIN</a></li>
 
->>>>>>> mondif
                   <!-- <li><a href="#">Tabel Gudang 3</a></li> -->
               </ul>
             </li>

@@ -341,6 +341,24 @@
           </div>
         </div>
         <!-- ./col -->
+
+
+         <!-- ./col -->
+         <div class="col-lg-3 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-red" id="content_box4">
+            <div class="inner">
+              <h3>Permintaan barang</h3>
+
+              <p>Daftar Permintaan</p>
+            </div>
+            <div class="icon">
+              <i class="ion ion-pie-graph"></i>
+            </div>
+            <a href="<?=base_url('admin/tabel_barangkeluar')?>" class="small-box-footer" id="box_footer4">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+        <!-- ./col -->
       </div>
       <!-- /.row -->
       <!-- Main row -->
