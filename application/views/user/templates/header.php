@@ -59,7 +59,9 @@
               <ul class="dropdown-menu">
                 <li><a href="<?=base_url('user/tabel_barangmasuk');?>">Form Permintaan Barang</a></li>
                 <li><a href="<?=base_url('user/tabel_barangkeluar');?>">Form Persetujuan Admin</a></li>
-                <li><a href="<?=base_url('user/tabel_barangkeluar');?>">Table Permintaan Barang</a></li>
+<<<<<<< HEAD
+
+>>>>>>> mondif
                   <!-- <li><a href="#">Tabel Gudang 3</a></li> -->
               </ul>
             </li>
