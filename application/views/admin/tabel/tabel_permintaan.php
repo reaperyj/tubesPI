@@ -244,6 +244,7 @@
         <th>Nama Barang</th>
         <th>Satuan</th>
         <th>Jumlah</th>
+        <th>Delete</th>
         <th>Status</th>
       </tr>
     </thead>
@@ -252,7 +253,7 @@
         <?php if(is_array($list_data)){ ?>
         <?php $no = 1;?>
         <?php foreach($list_data as $dd): ?>
-          <td><?=$no?></td>
+          <td><?=$dd->id?></td>
           <td><?=$dd->id_transaksi?></td>
           <td><?=$dd->tanggal_masuk?></td>
           <td><?=$dd->tanggal_keluar?></td>
@@ -261,6 +262,7 @@
           <td><?=$dd->nama_barang?></td>
           <td><?=$dd->satuan?></td>
           <td><?=$dd->jumlah?></td>
+          <td><a type="button" class="btn btn-danger btn-delete"  href="<?=base_url('admin/delete_barang_permintaan/'.$dd->id)?>" name="btn_delete" style="margin:auto;"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
       </tr>
     <?php $no++; ?>
     <?php endforeach;?>

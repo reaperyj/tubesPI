@@ -526,5 +526,12 @@ class Admin extends CI_Controller{
     $this->load->view('admin/tabel/tabel_permintaan',$data);
   }
 
+  public function delete_barang_permintaan($id)
+  {
+    $where = array('id' => $id);
+    $this->M_admin->delete('tb_request',$where);
+    redirect(base_url('admin/tabel_permintaan'));
+  }
+
 }
 ?>
