@@ -519,6 +519,57 @@ class Admin extends CI_Controller{
     $this->load->view('admin/tabel/tabel_barangkeluar',$data);
   }
 
+  public function tabel_permintaan()
+  {
+    $data['list_data'] = $this->M_admin->select('tb_request');
+    $data['avatar'] = $this->M_admin->get_data_gambar('tb_upload_gambar_user',$this->session->userdata('name'));
+    $this->load->view('admin/tabel/tabel_permintaan',$data);
+  }
+
+  public function delete_barang_permintaan($id)
+  {
+    $where = array('id' => $id);
+    $this->M_admin->delete('tb_request',$where);
+    redirect(base_url('admin/tabel_permintaan'));
+  }
+
+  public function barang_permintaan_keluar()
+  {
+    $uri = $this->uri->segment(3);
+    $where = array( 'id_transaksi' => $uri);
+    $data['list_data'] = $this->M_admin->get_data('tb_request',$where);
+    $data['list_satuan'] = $this->M_admin->select('tb_satuan');
+    $data['avatar'] = $this->M_admin->get_data_gambar('tb_upload_gambar_user',$this->session->userdata('name'));
+    $this->load->view('admin/perpindahan_barang/form_request',$data);
+  }
+
+  public function proses_data_permintaan_keluar()
+  {
+      $id_transaksi   = $this->input->post('id_transaksi',TRUE);
+      $tanggal_masuk  = $this->input->post('tanggal_masuk',TRUE);
+      $tanggal_keluar = $this->input->post('tanggal_keluar',TRUE);
+      $lokasi         = $this->input->post('lokasi',TRUE);
+      $kode_barang    = $this->input->post('kode_barang',TRUE);
+      $nama_barang    = $this->input->post('nama_barang',TRUE);
+      $satuan         = $this->input->post('satuan',TRUE);
+      $jumlah         = $this->input->post('jumlah',TRUE);
+
+      $where = array( 'id_transaksi' => $id_transaksi);
+      $data = array(
+              'id_transaksi' => $id_transaksi,
+              'tanggal_masuk' => $tanggal_masuk,
+              'tanggal_keluar' => $tanggal_keluar,
+              'lokasi' => $lokasi,
+              'kode_barang' => $kode_barang,
+              'nama_barang' => $nama_barang,
+              'satuan' => $satuan,
+              'jumlah' => $jumlah
+      );
+        $this->M_admin->insert('tb_barang_keluar',$data);
+        $this->session->set_flashdata('msg_berhasil_keluar','Data Berhasil Keluar');
+        redirect(base_url('admin/tabel_permintaan'));
+
+  }
 
 }
 ?>

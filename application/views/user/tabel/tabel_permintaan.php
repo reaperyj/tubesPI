@@ -1,12 +1,13 @@
-<br><br><br>
+<br><br><br><br><br>
+<br>
     <div class="container text-center" style="margin: 2em auto;">
-    <h2 class="tex-center">Stock Barang di Gudang USU</h2>
+    <h2 class="tex-center">Tabel Permintaan Barang</h2>
     <table class="table table-bordered table-striped" style="margin: 2em auto;" id="tabel_barangmasuk">
     <thead>
       <tr>
         <th>No</th>
         <th>ID_Transaksi</th>
-        <th>Tanggal</th>
+        <th>Tanggal Permintaan</th>
         <th>Lokasi</th>
         <th>Kode Barang</th>
         <th>Nama Barang</th>
@@ -27,7 +28,6 @@
           <td><?=$dd->nama_barang?></td>
           <td><?=$dd->satuan?></td>
           <td><?=$dd->jumlah?></td>
-          <td><a type="button" class="btn btn-success btn-barangkeluar"  href="<?=base_url('user/barang_keluar/'.$dd->id_transaksi)?>" name="btn_barangkeluar" style="margin:auto;"><i class="fa fa-sign-out" aria-hidden="true"></i></a></td>
       </tr>
     <?php $no++; ?>
     <?php endforeach;?>
@@ -39,11 +39,14 @@
   </div>
   <br><br>
 
- 
 
-
-<script type="text/javascript">
+  <script type="text/javascript">
   $(document).ready(function(){
-    $('#tabel_barangmasuk1').DataTable();
+    $('#tabel_permintaan').DataTable();
   });
 </script>
+
+
+
+
+

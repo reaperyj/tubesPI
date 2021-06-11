@@ -7,12 +7,35 @@ class M_user extends CI_Model{
     $this->db->update($tabel,$data);
   }
 
+  public function insert($tabel,$data){
+    $this->db->insert($tabel,$data);
+  }
+
   public function select($tabel)
   {
     return $this->db->select()
                     ->from($tabel)
                     ->get()->result();
   }
+  public function get_data_gambar($tabel,$username)
+  {
+    $query = $this->db->select()
+                      ->from($tabel)
+                      ->where('username_user',$username)
+                      ->get();
+    return $query->result();
+  }
+
+  public function get_data($tabel,$id_transaksi)
+  {
+    $query = $this->db->select()
+                      ->from($tabel)
+                      ->where($id_transaksi)
+                      ->get();
+    return $query->result();
+  }
+
+  
 }
 
  ?>
