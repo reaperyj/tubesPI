@@ -28,6 +28,14 @@
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="<?php echo base_url()?>assets/web_admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   <link rel="stylesheet" href="<?php echo base_url()?>style/mdi/css/materialdesignicons.min.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 
   <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;800&display=swap" rel="stylesheet">
@@ -37,8 +45,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="<?php echo base_url()?>style/nav-head.css">
-  <link rel="stylesheet" href="<?php echo base_url()?>style/vendor.bundle.base.css">
-  <link rel="stylesheet" href="<?php echo base_url()?>style/materialdesignicons.min.css">
 </head>
 <body>
 <div class="wrapper">
@@ -144,7 +150,7 @@
           </ul> -->
         </li>
 
-        <li class="treeview active" id="edit_forms">
+        <li class="treeview" id="edit_forms">
           <a href="#" id="a_forms">
             <span id="forms">Forms</span>
             <span class="pull-right-container">
@@ -152,11 +158,11 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a id="active" href="<?php echo base_url('admin/form_barangmasuk')?>"><i class="fa fa-circle-o"></i> Tambah Data Barang Masuk</a></li>
+            <li><a id="barangmsk" href="<?php echo base_url('admin/form_barangmasuk')?>"><i class="fa fa-circle-o"></i> Tambah Data Barang Masuk</a></li>
             <li><a id="satuanbrg" href="<?php echo base_url('admin/form_satuan')?>"><i class="fa fa-circle-o"></i> Tambah Satuan Barang</a></li>
           </ul>
         </li>
-        <li class="treeview" id="treeview_tables">
+        <li class="treeview active" id="treeview_tables">
           <a href="#" id="a_tables">
            <span id="tables">Tables</span>
             <span class="pull-right-container">
@@ -164,8 +170,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a id="tabelmsk" href="<?= base_url('admin/tabel_barangmasuk') ?>"><i class="fa fa-circle-o"></i> Tabel Barang Masuk</a></li>
-            <li><a id="tabelkeluar" href="<?= base_url('admin/tabel_barangkeluar')?>"><i class="fa fa-circle-o"></i> Tabel Barang Keluar</a></li>
+          <li><a id="tabelmsk" href="<?= base_url('admin/tabel_barangmasuk') ?>"><i class="fa fa-circle-o"></i> Tabel Barang Masuk</a></li>
+            <li><a id="active" href="<?= base_url('admin/tabel_barangkeluar')?>"><i class="fa fa-circle-o"></i> Tabel Barang Keluar</a></li>
+            <li><a id="active" href="<?= base_url('admin/tabel_permintaan')?>"><i class="fa fa-circle-o"></i> Tabel Permintaan Barang</a></li>
             <li><a id="tabelsatuan" href="<?= base_url('admin/tabel_satuan')?>"><i class="fa fa-circle-o"></i> Tabel Satuan</a></li>
           </ul>
 
@@ -195,136 +202,92 @@
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1 style="font-family: 'Ubuntu', sans-serif;color:rgb(63, 63, 63);">
-        Input Data Barang Masuk
+      <h1>
+        Tabel Barang Keluar
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li><a href="#">Forms</a></li>
-        <li class="active">Data Barang Masuk</li>
+        <li><a href="<?=base_url('admin')?>"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li>Tables</li>
+        <li class="active"><a href="<?=base_url('admin/tabel_barangkeluar')?>">Tabel Barang Keluar</a></li>
       </ol>
     </section>
 
     <!-- Main content -->
     <section class="content">
       <div class="row">
-        <!-- left column -->
-        <div class="col-md-12">
-          <div class="container">
-            <!-- general form elements -->
-          <div class="box" style="width:94%;" id="box_forms">
-            <div class="box-header with-border">
-              <h3 class="box-title" style="font-family: 'Ubuntu', sans-serif;color:rgb(63, 63, 63);"><i class="fa fa-archive" aria-hidden="true"></i> Tambah Data Barang Masuk</h3>
+        <div class="col-xs-12">
+
+          <!-- /.box -->
+          <div class="box">
+            <div class="box-header">
+              <h3 class="box-title"><i class="fa fa-table" aria-hidden="true"></i> Stok Barang Masuk</h3>
             </div>
             <!-- /.box-header -->
-            <!-- form start -->
-            <div class="container">
-            <form action="<?=base_url('admin/proses_databarang_masuk_insert')?>" role="form" method="post">
+            <div class="box-body">
 
               <?php if($this->session->flashdata('msg_berhasil')){ ?>
-                <div class="alert alert-success alert-dismissible" style="width:91%">
+                <div class="alert alert-success alert-dismissible" style="width:100%">
                     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
                     <strong>Success!</strong><br> <?php echo $this->session->flashdata('msg_berhasil');?>
                </div>
               <?php } ?>
 
-              <?php if(validation_errors()){ ?>
-              <div class="alert alert-warning alert-dismissible">
-                  <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-                  <strong>Warning!</strong><br> <?php echo validation_errors(); ?>
-             </div>
-            <?php } ?>
-
-              <div class="box-body">
-                <div class="form-group">
-                  <label for="id_transaksi" style="margin-left:220px;display:inline;font-family: 'Ubuntu', sans-serif;color:rgb(63, 63, 63);">ID Transaksi</label>
-                  <input type="text" id="id_transaksi" name="id_transaksi" style="margin-left:37px;width:20%;display:inline;" class="form-control" readonly="readonly" value="USU-<?=date("Y");?><?=random_string('numeric', 8);?>">
-                </div>
-                <div class="form-group">
-                  <label for="tanggal" style="margin-left:220px;display:inline;font-family: 'Ubuntu', sans-serif;color:rgb(63, 63, 63);">Tanggal</label>
-                  <input type="text" id="tanggal" name="tanggal" style="margin-left:66px;width:20%;display:inline;" class="form-control form_datetime" placeholder="Klik Disini">
-                </div>
-                <div class="form-group" style="margin-bottom:40px;">
-                  <label for="nama_barang" style="margin-left:220px;display:inline;font-family: 'Ubuntu', sans-serif;color:rgb(63, 63, 63);">Lokasi</label>
-                  <select class="form-control" id="lokasi" name="lokasi" style="margin-left:75px;width:20%;display:inline;">
-                    <option value="">-- Pilih --</option>
-                    <option value="Gudang Pusat">Gudang Pusat</option>
-                    <option value="Kedokteran">F. Kedokteran</option>
-                    <option value="Pertanian">F. Pertanian</option>
-                    <option value="Hukum">F. Hukum</option>
-                    <option value="Teknik">F. Teknik</option>
-                    <option value="Ekonomo">F. Ekonomoi</option>
-                    <option value="Kedokteran Gigi">F. Kedokteran Gigi</option>
-                    <option value="Ilmu budaya">F. Ilmu budaya</option>
-                    <option value="Matematika dan IPA">F. Matematika dan IPA</option>
-                    <option value="Ilmu sosial dan Politik">F. Ilmu sosial dan Politik</option>
-                    <option value="Kesehatan Masyarakat">F. Kesehatan Masyarakat</option>
-                    <option value="Farmasi">F. Farmasi</option>
-                    <option value="Psikologi ">F. Psikologi</option>
-                    <option value="Keperawatan">F. Keperawatan</option>
-                    <option value="Ilmu komputer dan Teknologi Informasi">F. Ilmu komputer dan Teknologi Informasi</option>
-                  </select>
-                </div>
-                <div class="form-group" style="display:inline-block;">
-                  <label for="kode_barang" style="width:87%;margin-left: 12px;font-family: 'Ubuntu', sans-serif;color:rgb(63, 63, 63);">Kode Barang / Barcode</label>
-                  <input type="text" id="kode_barang" name="kode_barang" style="width: 90%;margin-right: 67px;margin-left: 11px;font-family: 'Ubuntu', sans-serif;color:rgb(63, 63, 63);" class="form-control" id="kode_barang" placeholder="Kode Barang">
-                </div>
-                <div class="form-group" style="display:inline-block;">
-                  <label for="nama_Barang" style="width:73%;font-family: 'Ubuntu', sans-serif;color:rgb(63, 63, 63);">Nama Barang</label>
-                  <input type="text" id="nama_barang" name="nama_barang" style="width:90%;margin-right: 67px;font-family: 'Ubuntu', sans-serif;color:rgb(63, 63, 63);" class="form-control" id="nama_Barang" placeholder="Nama Barang">
-              </div>
-                <div class="form-group" style="display:inline-block;">
-                  <label for="satuan" id="satuan" style="width:73%;font-family: 'Ubuntu', sans-serif;color:rgb(63, 63, 63);">Satuan</label>
-                  <select class="form-control" id="satuan" name="satuan" style="width:110%;margin-right: 18px;font-family: 'Ubuntu', sans-serif;color:rgb(63, 63, 63);">
-                    <option value="" selected="">-- Pilih --</option>
-                    <?php foreach($list_satuan as $s){ ?>
-                    <option value="<?=$s->kode_satuan?>"><?=$s->nama_satuan?></option>
-                    <?php } ?>
-                  </select>
-              </div>
-              <div class="form-group" style="display:inline-block;">
-                <label for="jumlah" id="jumlah" style="width:73%;margin-left:33px;font-family: 'Ubuntu', sans-serif;color:rgb(63, 63, 63);">Jumlah</label>
-                <input type="number" name="jumlah" style="width:41%;margin-left:34px;margin-right:18px;font-family: 'Ubuntu', sans-serif;color:rgb(63, 63, 63);" class="form-control" id="jumlah">
+              <table class="table table-bordered table-striped" style="margin: 2em auto;" id="tabel_barangmasuk">
+    <thead>
+      <tr>
+        <th>No</th>
+        <th>ID_Transaksi</th>
+        <th>Tanggal Masuk/th>
+        <th>Tanggal Permintaan</th>
+        <th>Lokasi</th>
+        <th>Kode Barang</th>
+        <th>Nama Barang</th>
+        <th>Satuan</th>
+        <th>Jumlah</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <?php if(is_array($list_data)){ ?>
+        <?php $no = 1;?>
+        <?php foreach($list_data as $dd): ?>
+          <td><?=$no?></td>
+          <td><?=$dd->id_transaksi?></td>
+          <td><?=$dd->tanggal_masuk?></td>
+          <td><?=$dd->tanggal_keluar?></td>
+          <td><?=$dd->lokasi?></td>
+          <td><?=$dd->kode_barang?></td>
+          <td><?=$dd->nama_barang?></td>
+          <td><?=$dd->satuan?></td>
+          <td><?=$dd->jumlah?></td>
+      </tr>
+    <?php $no++; ?>
+    <?php endforeach;?>
+    <?php }else { ?>
+          <td colspan="7" align="center"><strong>Data Kosong</strong></td>
+    <?php } ?>
+    </tbody>
+                <tfoot>
+                <tr>
+                  <th>No</th>
+                  <th>ID Transaksi</th>
+                  <th>Tanggal Masuk</th>
+                  <th>Tanggal Keluar</th>
+                  <th>Lokasi</th>
+                  <th>Kode Barang</th>
+                  <th>Nama Barang</th>
+                  <th>Satuan</th>
+                  <th>Jumlah</th>
+                </tr>
+                </tfoot>
+              </table>
             </div>
-            <div class="form-group" style="display:inline-block;">
-              <button type="reset" id="button1" class="btn btn-basic" name="btn_reset" style="width:95px;margin-left:-12rem;"><i class="fa fa-eraser" aria-hidden="true"></i> Reset</button>
-            </div>
-              <!-- /.box-body -->
-              <div class="box-footer" style="width:93%;">
-                <a type="button" id="button2" class="btn btn-default" style="width:10%;margin-right:26%" onclick="history.back(-1)" name="btn_kembali"><i class="fa fa-arrow-left" aria-hidden="true"></i> Kembali</a>
-                <a type="button" id="button3" class="btn btn-gradient-primary mr-2" style="width:17%;" href="<?=base_url('admin/tabel_barangmasuk')?>" name="btn_listbarang"><i class="fa fa-table" aria-hidden="true"></i> Lihat List Barang</a>
-                <button type="submit" id="button4" style="width:20%" class="btn btn-success"><i class="fa fa-check" aria-hidden="true"></i> Submit</button>
-              </div>
-            </form>
+            <!-- /.box-body -->
           </div>
-          </div>
-          <!-- /.box -->
-
-          <!-- Form Element sizes -->
-
-          <!-- /.box -->
 
 
-          <!-- /.box -->
-
-          <!-- Input addon -->
-
-          <!-- /.box -->
-
-        </div>
-        <!--/.col (left) -->
-        <!-- right column -->
-        <!-- <div class="col-md-6">
-          <!-- Horizontal Form -->
-
-          <!-- /.box -->
-          <!-- general form elements disabled -->
-
-          <!-- /.box -->
-
-        </div>
-        </div>
-        <!--/.col (right) -->
+        <!-- /.col -->
       </div>
       <!-- /.row -->
     </section>
@@ -336,6 +299,7 @@
       <b>Version</b> 2.4.0
     </div>
     <strong>Copyright &copy; <?=date('Y')?></strong>
+    
   </footer>
 
   <!-- Control Sidebar -->
@@ -531,30 +495,56 @@
   <!-- Add the sidebar's background. This div must be placed
        immediately after the control sidebar -->
   <div class="control-sidebar-bg"></div>
-  </div>
-  <!-- ./wrapper -->
+</div>
+<!-- ./wrapper -->
 
-  <!-- jQuery 3 -->
-  <script src="<?php echo base_url()?>assets/web_admin/bower_components/jquery/dist/jquery.min.js"></script>
-  <!-- Bootstrap 3.3.7 -->
-  <script src="<?php echo base_url()?>assets/web_admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-  <!-- FastClick -->
-  <script src="<?php echo base_url()?>assets/web_admin/bower_components/fastclick/lib/fastclick.js"></script>
-  <!-- AdminLTE App -->
-  <script src="<?php echo base_url()?>assets/web_admin/dist/js/adminlte.min.js"></script>
-  <script src="<?php echo base_url()?>assets/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
-  <!-- AdminLTE for demo purposes -->
-  <script src="<?php echo base_url()?>assets/web_admin/dist/js/demo.js"></script>
-
-  <script type="text/javascript">
-      $(".form_datetime").datetimepicker({
-        format: 'dd/mm/yyyy',
-        autoclose: true,
-        todayBtn: true,
-        pickTime: false,
-        minView: 2,
-        maxView: 4,
+<!-- jQuery 3 -->
+<script src="<?php echo base_url()?>assets/web_admin/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="<?php echo base_url()?>assets/sweetalert/dist/sweetalert.min.js"></script>
+<!-- Bootstrap 3.3.7 -->
+<script src="<?php echo base_url()?>assets/web_admin/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="<?php echo base_url()?>assets/web_admin/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
+<script src="<?php echo base_url()?>assets/web_admin/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="<?php echo base_url()?>assets/web_admin/bower_components/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="<?php echo base_url()?>assets/web_admin/bower_components/fastclick/lib/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="<?php echo base_url()?>assets/web_admin/dist/js/adminlte.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="<?php echo base_url()?>assets/web_admin/dist/js/demo.js"></script>
+<!-- page script -->
+<script>
+jQuery(document).ready(function($){
+      $('.btn-delete').on('click',function(){
+          var getLink = $(this).attr('href');
+          swal({
+                  title: 'Delete Data',
+                  text: 'Yakin Ingin Menghapus Data ?',
+                  html: true,
+                  confirmButtonColor: '#d9534f',
+                  showCancelButton: true,
+                  },function(){
+                  window.location.href = getLink
+              });
+          return false;
       });
-  </script>
-  </body>
-  </html>
+  });
+
+  $(function () {
+    $('#example1').DataTable();
+    $('#example2').DataTable({
+      'paging'      : true,
+      'lengthChange': false,
+      'searching'   : false,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : false
+    })
+  });
+
+
+</script>
+</body>
+</html>
