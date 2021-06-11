@@ -533,5 +533,15 @@ class Admin extends CI_Controller{
     redirect(base_url('admin/tabel_permintaan'));
   }
 
+  public function barang_permintaan_keluar()
+  {
+    $uri = $this->uri->segment(3);
+    $where = array( 'id_transaksi' => $uri);
+    $data['list_data'] = $this->M_admin->get_data('tb_request',$where);
+    $data['list_satuan'] = $this->M_admin->select('tb_satuan');
+    $data['avatar'] = $this->M_admin->get_data_gambar('tb_upload_gambar_user',$this->session->userdata('name'));
+    $this->load->view('admin/perpindahan_barang/form_request',$data);
+  }
+
 }
 ?>

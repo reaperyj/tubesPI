@@ -244,7 +244,8 @@
         <th>Nama Barang</th>
         <th>Satuan</th>
         <th>Jumlah</th>
-        <th>Delete</th>
+        <th>Tolak</th>
+        <th>Setuju</th>
         <th>Status</th>
       </tr>
     </thead>
@@ -263,6 +264,7 @@
           <td><?=$dd->satuan?></td>
           <td><?=$dd->jumlah?></td>
           <td><a type="button" class="btn btn-danger btn-delete"  href="<?=base_url('admin/delete_barang_permintaan/'.$dd->id)?>" name="btn_delete" style="margin:auto;"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+          <td><a type="button" class="btn btn-success btn-barangkeluar"  href="<?=base_url('admin/barang_keluar/'.$dd->id_transaksi)?>" name="btn_barangkeluar" style="margin:auto;"><i class="fa fa-sign-out" aria-hidden="true"></i></a></td>
       </tr>
     <?php $no++; ?>
     <?php endforeach;?>
