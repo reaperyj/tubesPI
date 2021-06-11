@@ -543,5 +543,33 @@ class Admin extends CI_Controller{
     $this->load->view('admin/perpindahan_barang/form_request',$data);
   }
 
+  public function proses_data_permintaan_keluar()
+  {
+      $id_transaksi   = $this->input->post('id_transaksi',TRUE);
+      $tanggal_masuk  = $this->input->post('tanggal_masuk',TRUE);
+      $tanggal_keluar = $this->input->post('tanggal_keluar',TRUE);
+      $lokasi         = $this->input->post('lokasi',TRUE);
+      $kode_barang    = $this->input->post('kode_barang',TRUE);
+      $nama_barang    = $this->input->post('nama_barang',TRUE);
+      $satuan         = $this->input->post('satuan',TRUE);
+      $jumlah         = $this->input->post('jumlah',TRUE);
+
+      $where = array( 'id_transaksi' => $id_transaksi);
+      $data = array(
+              'id_transaksi' => $id_transaksi,
+              'tanggal_masuk' => $tanggal_masuk,
+              'tanggal_keluar' => $tanggal_keluar,
+              'lokasi' => $lokasi,
+              'kode_barang' => $kode_barang,
+              'nama_barang' => $nama_barang,
+              'satuan' => $satuan,
+              'jumlah' => $jumlah
+      );
+        $this->M_admin->insert('tb_barang_keluar',$data);
+        $this->session->set_flashdata('msg_berhasil_keluar','Data Berhasil Keluar');
+        redirect(base_url('admin/tabel_permintaan'));
+
+  }
+
 }
 ?>
